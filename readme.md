@@ -1,4 +1,9 @@
 
+There will be a set learning path along with links everywhere. Please read these links as they are part of the content of the course. #todo I will emphasise important links and "just for reference" links separately. The goal is to get someone with almost no knowledge able to feel comfortable with the concepts of programming a robot at their own pace. This guide is NOT exaustive, but attempts to be extensive without too much overlap or jumping.
+
+
+
+---
 
 # outline
 - how to program robots and best practices surrounding it
@@ -19,11 +24,17 @@
 		- handling hardware failures
 		- controls overrides (differing levels of control for subsystems)
 			- each subsystem should have control at all levels of automation. This means even if the part is controlled using PID (like a robot arm segment), it should still have a method of manual control
+- systems design
+	- https://en.wikipedia.org/wiki/Control_system
+		- open and closed loop
+	- 
 - Specific implementations and guidelines
 	- [[PID]]
 	- wrapping values from sensors (modulo math)
 	- How to pick units and related things (also modulo math (: )
 	- vision
+		- global vs local state
+		- sensor fusion
 	- binding buttons and commands (controls)
 	- 
 - index of resources
@@ -31,11 +42,6 @@
 	- programming tutorials?
 	- previous season examples (dont actually put it in here though put it where relevant)
 - software plus hardware
-	- controllable hardware
-		- motors
-		- encoders
-		- pneumatics
-		- other sensors like color
 	- workflows for software development and how to integrate it into the hardware lifecycle
 		- git workflow
 		- how to **prioritize** and create issues

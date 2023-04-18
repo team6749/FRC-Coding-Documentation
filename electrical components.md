@@ -1,0 +1,136 @@
+to program a robot, it is important to understand the basic components on the robot and how they behave since those are the things we directly interact with in code.
+
+**The reason we need to understand the electrical components is because our code effectively represents the inputs and outputs of those components. As a result of interacting with the real world things get messy and complex.**
+
+---
+# Motors
+Motors can be thought of as simple machines that convert a voltage into rotational movement.
+
+## Mechanical Characteristics
+A motor is an electrical component that converts electrical energy into mechanical energy; almost always this is in a rotational axis. There are many kinds of motors but all motors have a response curve. This curve is similar in shape between most motors and we can use the free speed to estimate the speed that the motor might rotate at with a given voltage input.
+![[falcon-500-response-curve.webp]]
+image source: https://store.ctr-electronics.com/falcon-500-powered-by-talon-fx/
+
+## Software control
+There are many kinds of motors, but for software we only interact with the motor controllers. These are electrical circuits that provide power to the motor in a controlled way. In code we define how the motor controller behaves. Some controllers support different features like brake mode, or inversion. These options are usually rarely changed and only set once.
+
+```java
+motor.setNeutralMode(NeutralMode.Brake);
+motor.setInverted(true);
+```
+
+More typically we will set the speed of the motor. There are multiple ways to do this. The most basic way is just a percentage output between -1 and 1 inclusive where -1 is reverse at full speed, 0 is no output (the motor can still be moved by external forces!), and 1 is full output forwards.
+
+```java
+motor.set(ControlMode.PercentOutput, 0.5);
+```
+
+However, this method of control has a problem. Due to how batteries work, the voltage of the battery is not consistent and will decrease as it discharges. The problem with this is that full output at 13 volts will be a different speed for the motor than full output at 11 volts. This inconsistency is bad when we are tuning our control systems. Typically we will control a motor using voltage, just like percent output with positive and negative voltages. However, we will pick a range (for example -11 to 11) which we think the battery is unlikely to go below. The higher the number, the more likely the battery is to be below that threshold voltage. The lower the number, the more limited the motor max output (think speed) will be. We can then feed in voltage values to get more consistent motor speeds regardless of battery voltage.
+
+> [!note]
+> This function _must_ be called regularly in order for voltage compensation to work properly - unlike the ordinary set function, it is not "set it and forget it." ([source](https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_w_p_i___talon_f_x.html#a7bb426ff3b3f42128eb4b1a47e9d8f32))
+
+```java
+motor.setVoltage(11);
+```
+
+The last motor control option we may want to use is a current limit. This isn't something that is typically used, but it is incredibly effective at limiting the **force** that a motor applies and heat generation (too much heat causes motors to fail). Since the force of the motor is directly poroprtional to the current. Here is an example with the Falcon 500 motors. Typically this value is set once and not changed.
+
+```java
+motor.configSupplyCurrentLimit(new SupplyCurrentLimitConfiguration(true, 10, 15, 0.5));
+```
+
+
+
+---
+# Switch
+A simple device that completes a circuit when pressed. Our code can read this change in value and act on it. We do not write any information to a switch, simply read it.
+
+[switch hardware](https://docs.wpilib.org/en/stable/docs/hardware/sensors/proximity-switches.html#mechanical-proximity-switches-limit-switches)
+![](https://docs.wpilib.org/en/stable/_images/limit-switch-to-roborio.svg)
+
+[switch software](https://docs.wpilib.org/en/stable/docs/software/hardware-apis/sensors/digital-inputs-software.html#digital-inputs-software)
+
+We can read a switch by creating a new switch object where the number indicates the DIO port the switch is connected to.
+```java
+// Initializes a DigitalInput on DIO 0
+DigitalInput input = new DigitalInput(0);
+
+// Gets the value of the digital input.  Returns true if the circuit is open.
+input.get();
+```
+When we read the value, it will return true, or false depending on if the switch is pressed or not.
+
+## Switch Safety
+In almost every situation we want to wire our switches to be normally closed. This is because if the switch is normally closed:
+- We can detect if the switch is unplugged when the robot starts up by checking to see if the switch is NOT connected, since when the switch is unplugged the circuit is not complete. We can log this hardware failure to easily detect and fix it ahead of time.
+- If the switch is unplugged while the robot is operating we can see that it has been triggered unexpectedly and this will also result in a fail safe condition. If the switch is being used to limit the movement of a mechanism it will prevent the mechanism from moving in the limited direction and potentially damaging itself.
+
+---
+# Encoders
+An encoder is a type of sensor that typically measures rotational movement. Typically they are paired with a motor to measure the distance that the motor has traveled or the speed that it is turning at (velocity). There are many different kinds of encoders with different quirks, features, and limits. 
+
+## Types
+**Relative encoders**: measure the relative turning distance from when it was powered up.
+- Some relative encoders have an index pin which gets triggered when the encoder completes a full rotation which can be used to home the encoder.
+**Absolute encoders**: (typically using a magnet) measure the absolute position along a single rotation and do not lose their position along that rotation when powered off. This is desirable for things like robot arms and turrets. The limitation however, is that it is ambiguous how many times the encoder has rotated when powered off.
+
+## Properties
+All encoders have a fixed resolution meaning it can only resolve a given number of "cycles per revolution", however most encoders have a resolution higher than 360 edges per rotation which would resolve 1 degree of resolution.
+
+[encoder hardware](https://docs.wpilib.org/en/stable/docs/hardware/sensors/encoders-hardware.html#encoders-hardware)
+
+## Software
+
+[encoder software](https://docs.wpilib.org/en/stable/docs/software/hardware-apis/sensors/encoders-software.html)
+
+Since software for encoders is quite complex and requires specific implementation for each encoder, this will only be the basic properties.
+
+FRC has many encoder Classes and after you pick your preferred one you will have access to (similar) functions.
+```java
+//Initialize an encoder
+encoder = new DutyCycleEncoder(encoderID);
+
+//Configure some properties of the encoder
+//We want our encoder to output values in degrees instead of rotations. There are 360 degrees in a single rotation.
+encoder.setDistancePerRotation(360);
+//This abosolute encoder has a calibrated position offset between 0-360 degrees. The function expects a range of 0-1 however; so we divide the calibrationValue by 360
+encoder.setPositionOffset(calibrationValue / 360);
+
+//Reads the encoder position since last reset scaled by setDistancePerRotation and offset by setPositionOffset.
+encoder.getDistance();
+```
+
+---
+# Gryoscopes
+Gyroscopes are mems devices that report the rotation in 1 or more axis since they were last reset. This rotation will drift over time, however over the duration of a typical frc match this drift is in the range of single degrees.
+
+Here is an example of what a 3 axis gyro would measure if placed in the center of a robot aligned to the robot axis.
+> [!note]
+> the position and orientation of the gyroscope will determine what sensor axis align to what axis on the robot. This may limit the placement of your gyro sensor.
+
+![](https://docs.wpilib.org/en/stable/_images/drive-yaw-pitch-roll.svg)
+[gryoscope hardware](https://docs.wpilib.org/en/stable/docs/hardware/sensors/gyros-hardware.html)
+
+#todo explain what causes gyroscope drift.
+
+## Calibration
+Many gyroscopes will do a self calibration proceedure when powered on (or via a software trigger). This process significantly reduces drift but requires that the robot is not moving during the process.
+
+## Typical uses
+Gyroscopes are typically used to measure the rotation of the robot on the field to control its facing direction.
+- Swerve drive robots can use the gyroscope to orient their driving direction to the field rather than to the forward facing direction of the robot.
+- Any robot can use the gyro to estimate facing direction in order to calculate its position on the field based on the distance it has traveled as measured by wheel travel distance via encoders.
+
+## Software
+```java
+//Create a gyro
+ADIS16470_IMU gyro = new ADIS16470_IMU();
+
+//read the Z axis of the gyro in degrees. This value is the number of degrees the robot has rotated since it was powered up and can be larger than 360 degrees if the robot has rotated more than once, or negative.
+gyro.getAngle();
+```
+
+---
+# misc sensors
+[Sensor hardware overview](https://docs.wpilib.org/en/stable/docs/hardware/sensors/sensor-overview-hardware.html)
