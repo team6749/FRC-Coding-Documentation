@@ -50,7 +50,7 @@
 	1. include proper waiting for pistons open/close time and also include proper control for solenoids in the open and close command
 10. intermediate control systems
 	1. PID control
-	2. feed forward control
+	2. feed forward control https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/feedforward.html
 	3. joysticks, controllers, response curves, deadzones, slew rate, and magnitude limits (as a physical property and mechanical property), and units
 	4. binding buttons and commands (controls) using wpilib and introduction to triggers
 11. flywheel subsystem example
