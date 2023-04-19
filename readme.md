@@ -1,5 +1,5 @@
 
-There will be a set learning path along with links everywhere. Please read these links as they are part of the content of the course. #todo I will emphasise important links and "just for reference" links separately. The goal is to get someone with almost no knowledge able to feel comfortable with the concepts of programming a robot at their own pace. This guide is NOT exaustive, but attempts to be extensive without too much overlap or jumping.
+There will be a set learning path along with links everywhere. Please read these links as they are part of the content of the course. I will ==emphasize== required links and not emphasize "just for reference" links. The goal is to get someone with almost no knowledge able to feel comfortable with the concepts of programming a robot at their own pace. This guide is **NOT** exaustive, but attempts to be extensive without too much overlap or jumping. This guide also may include errors.
 
 
 
@@ -24,10 +24,6 @@ There will be a set learning path along with links everywhere. Please read these
 		- handling hardware failures
 		- controls overrides (differing levels of control for subsystems)
 			- each subsystem should have control at all levels of automation. This means even if the part is controlled using PID (like a robot arm segment), it should still have a method of manual control
-- systems design
-	- https://en.wikipedia.org/wiki/Control_system
-		- open and closed loop
-	- 
 - Specific implementations and guidelines
 	- [[PID]]
 	- wrapping values from sensors (modulo math)
