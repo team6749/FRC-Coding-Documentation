@@ -10,8 +10,8 @@
 	3. intro boolean algebra. EHHHHHHH
 	4. [[2. computers and programs#BASIC programming (literally)]]
 	5. [[2. computers and programs#how computers think]]
-3. software collaboration
-	1. basic git (using visual git client like github desktop or vscode)
+3. [[3. software collaboration]]
+	1. [[3. software collaboration#git]]
 	2. workflows for software development and how to integrate it into the hardware lifecycle
 	3. basic git workflow
 	4. how to prioritize and create issues (including boards).
@@ -32,8 +32,13 @@
 		- object oriented code
 6. command based programming
 	1. subsystems
-	2. commands
-	3. command scheduler (like order of code exeuction)
+		- what is a subsystem (it describes the physicality of the robot and it controls that part)
+		- [[PID]] only subsystems
+		- when to and when to not use a subsystem in general (and which implementation to use)
+	1. commands
+		- what is a command
+		- how do commands relate to subsystems
+	2. command scheduler (like order of code exeuction and how commands and subsystems interact)
 7. logging and telemetry
 	1. explain its importance for testing and auditing
 	2. realtime vs recorded logging and logging locations
@@ -57,7 +62,7 @@
 11. flywheel subsystem example
 	1. program a flywheel that will use PID and feed forward control loop.
 	2. command to set the new velocity control setpoint
-12. intermediate units and numbers
+12. units and numbers
 	1. coordinate systems for the robot and field
 	2. sensor units
 	3. importance of standardizing and documenting units
@@ -73,5 +78,12 @@
 	4. PID for velocity including feed forward voltage control (including measuring the kinematics of the physical robot)
 	5. practical implementation of joystick input. including field oriented drive (with a gyroscope)
 	6. swerve path following command
-15. 
-16. simulation (robot and subsystem)
+15. redundancy and safety 
+	- **handling hardware failures**
+	- controls overrides (differing levels of control for subsystems)
+	- each subsystem should have control at all levels of automation. This means even if the part is controlled using PID (like a robot arm segment), it should still have a method of manual control for debugging and reliability.
+16. vision and robot positioning
+	- global vs local state
+	- practical uses for computer vision in FRC
+	- sensor fusion
+17. simulation (robot and subsystem)

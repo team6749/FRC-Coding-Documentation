@@ -14,4 +14,13 @@ quaternions and 3d rotation: https://www.youtube.com/watch?v=zjMuIxRvygQ
 convolutions (useful for image processing): https://www.youtube.com/watch?v=KuXjwB4LzSA
 
 
+# Code references
+6749 charged up robot (2023): https://github.com/team6749/2023-Charged-Up-Robot
+- Has arm with multiple independent segments (no IK or collision avoidance though)
+6749 2022 robot: https://github.com/team6749/2022_mainseason_robot
+- has elevator subsystem and shooter
+
+
+
+
 
