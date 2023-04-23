@@ -12,10 +12,9 @@
 	5. [[2. computers and programs#how computers think]]
 3. [[3. software collaboration]]
 	1. [[3. software collaboration#git]]
-	2. workflows for software development and how to integrate it into the hardware lifecycle
-	3. basic git workflow
-	4. how to prioritize and create issues (including boards).
-	5. reviewing and **testing** code
+	3. [[3. software collaboration#workflow dependencies]]
+	4. [[3. software collaboration#hardware]]
+	5. [[3. software collaboration#testing]]
 4. intro control systems
 	1.  https://en.wikipedia.org/wiki/Control_system
 	2. open vs closed loop
