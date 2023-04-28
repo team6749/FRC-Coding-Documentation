@@ -15,13 +15,12 @@
 	3. [[3. software collaboration#workflow dependencies]]
 	4. [[3. software collaboration#hardware]]
 	5. [[3. software collaboration#testing]]
-4. intro control systems
-	1.  https://en.wikipedia.org/wiki/Control_system
-	2. open vs closed loop
-	3. explain how a thermostat uses bang bang control for a closed loop system
-	4. give examples of closed loop and open loop systems using the robot components we went over earlier
-	5. how we might want to go about controlling a motor using psudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
-	6. explain debouncing and basics of digital signal processing with examples of noisy sensor data.
+4. [[4. intro control systems]]
+	1. [[4. intro control systems#open loop vs closed loop]]
+	2. explain how a thermostat uses bang bang control for a closed loop system
+	3. give examples of closed loop and open loop systems using the robot components we went over earlier
+	4. how we might want to go about controlling a motor using psudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
+	5. explain debouncing and basics of digital signal processing with examples of noisy sensor data.
 5. basic java
 	1. explain java programming concepts
 		- https://www.youtube.com/watch?v=GoXwIVyNvX0 (entire video; though the private/public chatter isn't really great)
