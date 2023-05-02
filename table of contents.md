@@ -17,11 +17,13 @@
 	5. [[3. software collaboration#testing]]
 4. [[4. intro control systems]]
 	1. [[4. intro control systems#open loop vs closed loop]]
-	2. PID control
 	3. how we might want to go about controlling a motor using psudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
 5. [[5. basic programming]]
 	1. [[5. basic programming#make a website]]
 	2. [[5. basic programming#intro to java]]
+6. loop based programming
+	1. give an example pseudocode for a robot that runs on a loop
+	2. explain why it is bad
 7. command based programming
 	1. subsystems
 		- what is a subsystem (it describes the physicality of the robot and it controls that part)
