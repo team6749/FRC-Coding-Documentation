@@ -1,7 +1,4 @@
 
-https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/common-control-issues.html
-
-
 - d kick
 - handling wrapping values
 - i accumulation
@@ -11,3 +8,7 @@ https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/c
 - cool video: https://www.youtube.com/watch?v=y3K6FUgrgXw
 
 https://eliottwiener.github.io/pidcontroldemo/
+
+
+list of some common pid issues and how to resolve them: https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/common-control-issues.html
+

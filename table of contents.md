@@ -17,17 +17,11 @@
 	5. [[3. software collaboration#testing]]
 4. [[4. intro control systems]]
 	1. [[4. intro control systems#open loop vs closed loop]]
-	3. give examples of closed loop and open loop systems using the robot components we went over earlier
-	4. how we might want to go about controlling a motor using psudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
-	5. explain debouncing and basics of digital signal processing with examples of noisy sensor data.
-5. basic java
-	1. go over basic HTML and CSS?
-	2. explain java programming concepts
-		- https://www.youtube.com/watch?v=GoXwIVyNvX0 (entire video; though the private/public chatter isn't really great)
-		- data types https://www.youtube.com/watch?v=6otW6OXjR8c (only first 3 mins)
-		- basic syntax
-		- basic logic statements
-		- object oriented code
+	2. PID control
+	3. how we might want to go about controlling a motor using psudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
+5. [[5. basic programming]]
+	1. [[5. basic programming#make a website]]
+	2. [[5. basic programming#intro to java]]
 7. command based programming
 	1. subsystems
 		- what is a subsystem (it describes the physicality of the robot and it controls that part)
@@ -53,10 +47,11 @@
 10. pneumatic claw subsystem example
 	1. include proper waiting for pistons open/close time and also include proper control for solenoids in the open and close command
 11. intermediate control systems
-	1. PID control
+	1. PID implementation and potential issues
 	2. feed forward control https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/feedforward.html
 	3. joysticks, controllers, response curves, deadzones, slew rate, and magnitude limits (as a physical property and mechanical property), and units
 	4. binding buttons and commands (controls) using wpilib and introduction to triggers
+	5. explain debouncing and basics of digital signal processing with examples of noisy sensor data.
 12. flywheel subsystem example
 	1. program a flywheel that will use PID and feed forward control loop.
 	2. command to set the new velocity control setpoint
