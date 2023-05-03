@@ -21,7 +21,7 @@
 5. [[5. basic programming]]
 	1. [[5. basic programming#make a website]]
 	2. [[5. basic programming#intro to java]]
-6. loop based programming
+6. [[6. loop based programming]]
 	1. give an example pseudocode for a robot that runs on a loop
 	2. explain why it is bad
 7. command based programming
