@@ -7,6 +7,7 @@ this is a list of individual resources that may be relevant or not.
 # FRC
 WPILIB docs (this site has most things you need to build and program a robot): https://docs.wpilib.org/en/stable
 
+FRC control systems index: https://docs.wpilib.org/en/stable/docs/software/advanced-controls/index.html
 
 # Math
 fourier transform: https://www.youtube.com/watch?v=spUNpyF58BY

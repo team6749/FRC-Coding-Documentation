@@ -17,7 +17,7 @@
 	5. [[3. software collaboration#testing]]
 - [[4. intro control systems]]
 	1. [[4. intro control systems#open loop vs closed loop]]
-	3. how we might want to go about controlling a motor using psudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
+	3. how we might want to go about controlling a motor using pseudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
 - [[5. basic programming]]
 	1. [[5. basic programming#make a website]]
 	2. [[5. basic programming#intro to java]]
@@ -29,21 +29,12 @@
 	3. [[7. command based programming#Scheduler]]
 	4. [[7. command based programming#Programming Command Based Robots]]
 - [[8. logging and telemetry]]
-	1. explain its importance for testing and auditing
-	2. realtime vs recorded logging and logging locations
-	3. custom logging and automatic logging (wpilib stuff? advantagescope??)
-	4. shuffleboard
-- intermediate programming
+	1. [[8. logging and telemetry#programming]]
+- [[9. intermediate programming]]
 	1. understanding code execution in detail (like when something gets executed)
-	2. how to use abstraction well (in object oriented code, separation of concerns)
-	3. intermediate inheritance like subsystem classes and PID subsystem, though most stuff appears to be going towards the functional route??
-	4. type casting and null errors
-	5. new keyword and pass by value or by reference
-	6. function parameters (modifier functions workflow versus member functions)
-	7. structured programming https://www.youtube.com/watch?v=7hdJQkn8rtA
 - pneumatic claw subsystem example
 	1. include proper waiting for pistons open/close time and also include proper control for solenoids in the open and close command
-- intermediate control systems
+- [[11. intermediate control systems]]
 	1. PID implementation and potential issues
 	2. feed forward control https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/feedforward.html
 	3. joysticks, controllers, response curves, deadzones, slew rate, and magnitude limits (as a physical property and mechanical property), and units
