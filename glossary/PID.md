@@ -12,3 +12,6 @@ https://eliottwiener.github.io/pidcontroldemo/
 
 list of some common pid issues and how to resolve them: https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/common-control-issues.html
 
+
+# example of instability
+![[unstable_pid.mp4]]
