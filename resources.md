@@ -13,7 +13,7 @@ FRC control systems index: https://docs.wpilib.org/en/stable/docs/software/advan
 fourier transform: https://www.youtube.com/watch?v=spUNpyF58BY
 quaternions and 3d rotation: https://www.youtube.com/watch?v=zjMuIxRvygQ
 convolutions (useful for image processing): https://www.youtube.com/watch?v=KuXjwB4LzSA
-
+how aimbots work: https://www.youtube.com/watch?v=FM1E0ucndFw #todo add to course
 
 # Code references
 6749 charged up robot (2023): https://github.com/team6749/2023-Charged-Up-Robot

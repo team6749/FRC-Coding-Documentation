@@ -32,9 +32,7 @@
 	1. [[8. logging and telemetry#programming]]
 - [[9. intermediate programming]]
 	1. understanding code execution in detail (like when something gets executed)
-- pneumatic claw subsystem example
-	1. include proper waiting for pistons open/close time and also include proper control for solenoids in the open and close command
-- [[11. intermediate control systems]]
+- [[10. intermediate control systems]]
 	1. PID implementation and potential issues
 	2. feed forward control https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/feedforward.html
 	3. joysticks, controllers, response curves, deadzones, slew rate, and magnitude limits (as a physical property and mechanical property), and units
@@ -43,6 +41,8 @@
 - flywheel subsystem example
 	1. program a flywheel that will use PID and feed forward control loop.
 	2. command to set the new velocity control setpoint
+- [[12. pneumatic claw subsystem]]
+	1. include proper waiting for pistons open/close time and also include proper control for solenoids in the open and close command
 - units and numbers
 	1. coordinate systems for the robot and field
 	2. sensor units
