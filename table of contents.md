@@ -1,38 +1,38 @@
-- [[1. electrical]]
-	1. [[1. electrical#Motors]]
-	2. [[1. electrical#Encoders]]
-	3. [[1. electrical#Pneumatics]]
-	4. [[1. electrical#Switch]]
-	5. [[1. electrical#MEMS Gryoscopes and Accelerometers]]
-	6. [[1. electrical#misc sensors]]
-- [[2. computers and programs]]
-	2. [[2. computers and programs#binary and data storage]]
-	3. [[2. computers and programs#intro logic and boolean algebra]]
-	4. [[2. computers and programs#BASIC programming (literally)]]
-	5. [[2. computers and programs#how computers think]]
-- [[3. software collaboration]]
-	1. [[3. software collaboration#git]]
-	3. [[3. software collaboration#workflow dependencies]]
-	4. [[3. software collaboration#hardware]]
-	5. [[3. software collaboration#testing]]
-- [[4. intro control systems]]
-	1. [[4. intro control systems#open loop vs closed loop]]
+- [1. electrical](1.%20electrical.md)
+	1. [Motors](1.%20electrical.md#Motors)
+	2. [Encoders](1.%20electrical.md#Encoders)
+	3. [Pneumatics](1.%20electrical.md#Pneumatics)
+	4. [Switch](1.%20electrical.md#Switch)
+	5. [Accelerometers](1.%20electrical.md#MEMS%20Gryoscopes%20and%20Accelerometers)
+	6. [Sensors](1.%20electrical.md#misc%20sensors)
+- [2. computers and programs](2.%20computers%20and%20programs.md)
+	1. [Data Storage](2.%20computers%20and%20programs.md#binary%20and%20data%20storage)
+	2. [Boolean Algebra](2.%20computers%20and%20programs.md#intro%20logic%20and%20boolean%20algebra)
+	3. [BASIC](2.%20computers%20and%20programs.md#BASIC%20programming%20(literally))
+	4. [How Computers Think](2.%20computers%20and%20programs.md#how%20computers%20think)
+- [3. software collaboration](3.%20software%20collaboration.md)
+	1. [Git](3.%20software%20collaboration.md#git)
+	3. [Workflow Dependencies](3.%20software%20collaboration.md#workflow%20dependencies)
+	4. [Hardware](3.%20software%20collaboration.md#hardware)
+	5. [Testing](3.%20software%20collaboration.md#testing)
+- [4. intro control systems](4.%20intro%20control%20systems.md)
+	1. [Closed Loop](4.%20intro%20control%20systems.md#open%20loop%20vs%20closed%20loop)
 	3. how we might want to go about controlling a motor using pseudocode. explain concepts like how a loop works (program a thermostat in this example using the sensor to explain how timing works and relate specifically to robot code timings like the periodic loops)
-- [[5. basic programming]]
-	1. [[5. basic programming#make a website]]
-	2. [[5. basic programming#intro to java]]
-- [[6. loop based programming]]
-- [[7. command based programming]]
-	1. [[7. command based programming#Subsystem]]
+- [5. basic programming](5.%20basic%20programming.md)
+	1. [Make a Website](5.%20basic%20programming.md#make%20a%20website)
+	2. [Intro to Java](5.%20basic%20programming.md#intro%20to%20java)
+- [6. loop based programming](6.%20loop%20based%20programming.md)
+- [7. command based programming](7.%20command%20based%20programming.md)
+	1. [Subsystems](7.%20command%20based%20programming.md#Subsystem)
 		- when to and when to not use a subsystem in general (and which implementation to use)
-	2. [[7. command based programming#Command]]
-	3. [[7. command based programming#Scheduler]]
-	4. [[7. command based programming#Programming Command Based Robots]]
-- [[8. logging and telemetry]]
-	1. [[8. logging and telemetry#programming]]
-- [[9. intermediate programming]]
-	1. understanding code execution in detail (like when something gets executed)
-- [[10. intermediate control systems]]
+	2. [Command](7.%20command%20based%20programming.md#Command)
+	3. [Scheduler](7.%20command%20based%20programming.md#Scheduler)
+	4. [Command Based Robots](7.%20command%20based%20programming.md#Programming%20Command%20Based%20Robots)
+- [8. logging and telemetry](8.%20logging%20and%20telemetry.md)
+	1. [Programming](8.%20logging%20and%20telemetry.md#programming)
+- [9. intermediate programming](9.%20intermediate%20programming.md)
+	1. understanding code execution in detail (call stack on scheduler)
+- [10. intermediate control systems](10.%20intermediate%20control%20systems.md)
 	1. PID implementation and potential issues
 	2. feed forward control https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/feedforward.html
 	3. joysticks, controllers, response curves, deadzones, slew rate, and magnitude limits (as a physical property and mechanical property), and units
@@ -41,13 +41,13 @@
 - flywheel subsystem example
 	1. program a flywheel that will use PID and feed forward control loop.
 	2. command to set the new velocity control setpoint
-- [[12. pneumatic claw subsystem]]
+- [12. pneumatic claw subsystem](12.%20pneumatic%20claw%20subsystem.md)
 	1. include proper waiting for pistons open/close time and also include proper control for solenoids in the open and close command
 - units and numbers
 	1. coordinate systems for the robot and field
 	2. sensor units
 	3. importance of standardizing and documenting units
-	4. [[resources#Math]]
+	4. [](resources.md#Math)
 - elevator subsystem example
 	1. program an elevator that uses relative encoders with a limit switch to home.
 	2. limit switch wiring to ensure fail safe behavior

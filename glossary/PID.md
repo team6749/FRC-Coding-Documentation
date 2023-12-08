@@ -14,4 +14,4 @@ list of some common pid issues and how to resolve them: https://docs.wpilib.org/
 
 
 # example of instability
-![[unstable_pid.mp4]]
+![unstable_pid](unstable_pid.mp4)
